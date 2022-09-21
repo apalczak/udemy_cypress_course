@@ -11,4 +11,5 @@ describe("Test Contact Us form on WebdriverUni", () => {
         cy.get("textarea.feedback-input").type("New comment");
         cy.get('[type="submit"]').click();
     });
+    it("Should not be able to submit a successful submission as all fields are required", () => {});
 });
