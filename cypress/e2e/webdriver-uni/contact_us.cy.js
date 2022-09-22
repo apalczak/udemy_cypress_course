@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 describe("Test Contact Us form on WebdriverUni", () => {
-    it.only("Should have a charset set to UTF-8", () => {
+    it("Should have a charset set to UTF-8", () => {
         cy.visit(
             "https://www.webdriveruniversity.com/Contact-Us/contactus.html"
         );

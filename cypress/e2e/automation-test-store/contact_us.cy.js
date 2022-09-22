@@ -13,4 +13,20 @@ describe("Test Contact Us form on Automation Test Store", () => {
             "Your enquiry has been successfully sent to the store owner!".trim()
         );
     });
+    it("Should be able to output log with the name of the link", () => {
+        cy.visit("https://www.automationteststore.com/");
+        cy.get(`a[href$="contact"]`)
+            .click()
+            .then((item) => {
+                cy.log(item[0].innerText);
+            });
+    });
+    it.only("Validate properties of the Contact Us Page", () => {
+        cy.visit(
+            "https://www.automationteststore.com/index.php?rt=content/contact"
+        );
+        cy.contains("#ContactUsFrm", "Contact Us Form")
+            .find("#field_11")
+            .should("contain", "First name");
+    });
 });
