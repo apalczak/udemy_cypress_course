@@ -20,10 +20,6 @@ describe("Iterate over elements", () => {
             cy.log(`Index: ${index} : ${$el.text()}`);
         });
 
-        cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
-            if ($el.text().includes("Seaweed")) {
-                cy.wrap($el).click();
-            }
-        });
+        cy.selectProduct("Seaweed");
     });
 });
