@@ -28,5 +28,13 @@ Cypress.Commands.add("selectProduct", (productName) => {
     });
 });
 
+Cypress.Commands.add("addProductToCart", (productName) => {
+    cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
+        if ($el.text() === productName) {
+            cy.get(".productcart").eq(index).click({ force: true });
+        }
+    });
+});
+
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })

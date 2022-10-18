@@ -20,7 +20,7 @@ import "./commands";
 // require('./commands')
 
 Cypress.Server.defaults({
-    ignore: (xhr) => {
-        bool;
-    },
+    // ignore: (xhr) => {
+    //     bool;
+    // },
 });
